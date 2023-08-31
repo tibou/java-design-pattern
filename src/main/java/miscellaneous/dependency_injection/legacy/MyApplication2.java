@@ -1,0 +1,14 @@
+package miscellaneous.dependency_injection.legacy;
+
+public class MyApplication2 {
+    private EmailService email = null;
+
+    public MyApplication2(EmailService svc){
+        this.email=svc;
+    }
+
+    public void processMessages(String msg, String rec){
+        //do some msg validation, manipulation logic etc
+        this.email.sendEmail(msg, rec);
+    }
+}
